@@ -16,11 +16,12 @@ public class Block
   }
   private Block(int x,int y)
   {
-    hBox= new Hitbox(x,y,SIZE,SIZE);
+    hBox= new Hitbox(x,y,(int)(SIZE*scaled),(int)(SIZE*scaled));
   }
   public boolean Intersects(Hitbox other){return hBox.Intersects(other);}
   public void Draw()
   {
+    noStroke();
     if(text==null)
       hBox.Draw(c);
     else
